@@ -144,43 +144,6 @@
         background: rgba(0, 255, 0, 0.8) !important;
       }
 
-      /* Help Button */
-      #helpButton {
-        position: fixed;
-        top: 15px;
-        right: 15px;
-        background: rgba(255,255,255,0.2);
-        border: 1px solid rgba(255,255,255,0.3);
-        color: white;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        cursor: pointer;
-        z-index: 999;
-        font-size: 18px;
-        backdrop-filter: blur(10px);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      /* Marker Info */
-      #markerInfo {
-        position: fixed;
-        bottom: 30px;
-        left: 50%;
-        transform: translateX(-50%);
-        background: rgba(0,0,0,0.8);
-        padding: 8px 16px;
-        border-radius: 15px;
-        z-index: 999;
-        color: white;
-        font-size: 12px;
-        font-weight: 500;
-        backdrop-filter: blur(10px);
-        display: none;
-      }
-
       @media (max-width: 480px) {
         .marker-text { font-size: 16px; }
         .marker-subtitle { font-size: 13px; }
@@ -240,11 +203,6 @@
     <!-- Status -->
     <div id="status">Marker tidak terdeteksi</div>
 
-    <!-- Help Button -->
-    <button id="helpButton" onclick="showInstructions()">
-      <i class="ri-question-line"></i>
-    </button>
-
     <!-- AR Scene -->
     <a-scene
       embedded
@@ -256,10 +214,10 @@
       
       <!-- Assets -->
       <a-assets>
-        <video id="vid1" src="asset/POSKO.mp4" loop muted playsinline crossorigin="anonymous" preload="metadata"></video>
-        <video id="vid2" src="asset/Joglo.mov" loop muted playsinline crossorigin="anonymous" preload="metadata"></video>
-        <video id="vid3" src="asset/Plunyon.mov" loop muted playsinline crossorigin="anonymous" preload="metadata"></video>
-        <video id="vid4" src="asset/Batukapal.mov" loop muted playsinline crossorigin="anonymous" preload="metadata"></video>
+        <video id="vid1" src="asset/POSKO.mp4" loop muted playsinline webkit-playsinline crossorigin="anonymous" preload="auto"></video>
+        <video id="vid2" src="asset/Joglo.mov" loop muted playsinline webkit-playsinline crossorigin="anonymous" preload="auto"></video>
+        <video id="vid3" src="asset/Plunyon.mov" loop muted playsinline webkit-playsinline crossorigin="anonymous" preload="auto"></video>
+        <video id="vid4" src="asset/Batukapal.mov" loop muted playsinline webkit-playsinline crossorigin="anonymous" preload="auto"></video>
       </a-assets>
       
       <!-- Marker 1: Posko KKN -->
@@ -267,19 +225,19 @@
         <a-entity id="videoContainer1" position="0 0 0" rotation="0 0 0">
           <a-plane 
             id="videoPlane1" 
-            position="0 0.01 0" 
+            position="0 0.02 0" 
             rotation="-90 0 0" 
-            width="2" 
-            height="1.125" 
-            material="shader: flat; src: #vid1; opacity: 1; side: double;"
+            width="1.2" 
+            height="0.675" 
+            material="src: #vid1; transparent: true; alphaTest: 0.1;"
             animation__scaleIn="property: scale; from: 0.1 0.1 0.1; to: 1 1 1; dur: 500; easing: easeOutBack; autoplay: false"
             animation__fadeIn="property: material.opacity; from: 0; to: 1; dur: 300; autoplay: false">
           </a-plane>
           <a-box
-            position="0 -0.05 0"
-            width="2.1"
-            height="0.1"
-            depth="1.18"
+            position="0 -0.03 0"
+            width="1.25"
+            height="0.06"
+            depth="0.75"
             material="color: #333; metalness: 0.8; roughness: 0.2;"
             shadow="receive: true">
           </a-box>
@@ -291,20 +249,20 @@
         <a-entity id="videoContainer2" position="0 0 0" rotation="0 0 0">
           <a-plane 
             id="videoPlane2" 
-            position="0 0.01 0" 
+            position="0 0.02 0" 
             rotation="-90 0 0" 
-            width="2" 
-            height="1.125" 
-            material="shader: flat; src: #vid2; opacity: 1; side: double;"
+            width="1.2" 
+            height="0.675" 
+            material="src: #vid2; transparent: true; alphaTest: 0.1;"
             animation__scaleIn="property: scale; from: 0.1 0.1 0.1; to: 1 1 1; dur: 500; easing: easeOutBack; autoplay: false"
             animation__fadeIn="property: material.opacity; from: 0; to: 1; dur: 300; autoplay: false">
           </a-plane>
           <a-box
-            position="0 -0.05 0"
-            width="2.1"
-            height="0.1"
-            depth="1.18"
-            material="color: #2d5a27; metalness: 0.8; roughness: 0.2;"
+            position="0 -0.03 0"
+            width="1.25"
+            height="0.06"
+            depth="0.7"
+            material="color: #333; metalness: 0.8; roughness: 0.2;"
             shadow="receive: true">
           </a-box>
         </a-entity>
@@ -315,20 +273,20 @@
         <a-entity id="videoContainer3" position="0 0 0" rotation="0 0 0">
           <a-plane 
             id="videoPlane3" 
-            position="0 0.01 0" 
+            position="0 0.02 0" 
             rotation="-90 0 0" 
-            width="2" 
-            height="1.125" 
-            material="shader: flat; src: #vid3; opacity: 1; side: double;"
+            width="1.2" 
+            height="0.675" 
+            material="src: #vid3; transparent: true; alphaTest: 0.1;"
             animation__scaleIn="property: scale; from: 0.1 0.1 0.1; to: 1 1 1; dur: 500; easing: easeOutBack; autoplay: false"
             animation__fadeIn="property: material.opacity; from: 0; to: 1; dur: 300; autoplay: false">
           </a-plane>
           <a-box
-            position="0 -0.05 0"
-            width="2.1"
-            height="0.1"
-            depth="1.18"
-            material="color: #8B4513; metalness: 0.8; roughness: 0.2;"
+            position="0 -0.03 0"
+            width="1.25"
+            height="0.06"
+            depth="0.7"
+            material="color: #333; metalness: 0.8; roughness: 0.2;"
             shadow="receive: true">
           </a-box>
         </a-entity>
@@ -339,20 +297,20 @@
         <a-entity id="videoContainer4" position="0 0 0" rotation="0 0 0">
           <a-plane 
             id="videoPlane4" 
-            position="0 0.01 0" 
+            position="0 0.02 0" 
             rotation="-90 0 0" 
-            width="2" 
-            height="1.125" 
-            material="shader: flat; src: #vid4; opacity: 1; side: double;"
+            width="1.2" 
+            height="0.675" 
+            material="src: #vid4; transparent: true; alphaTest: 0.1;"
             animation__scaleIn="property: scale; from: 0.1 0.1 0.1; to: 1 1 1; dur: 500; easing: easeOutBack; autoplay: false"
             animation__fadeIn="property: material.opacity; from: 0; to: 1; dur: 300; autoplay: false">
           </a-plane>
           <a-box
-            position="0 -0.05 0"
-            width="2.1"
-            height="0.1"
-            depth="1.18"
-            material="color: #696969; metalness: 0.8; roughness: 0.2;"
+            position="0 -0.03 0"
+            width="1.25"
+            height="0.06"
+            depth="0.7"
+            material="color: #333; metalness: 0.8; roughness: 0.2;"
             shadow="receive: true">
           </a-box>
         </a-entity>
@@ -374,10 +332,28 @@
       
       const title = document.getElementById("title");
       const status = document.getElementById("status");
-      const markerInfo = document.getElementById("markerInfo");
-      const currentMarkerSpan = document.getElementById("currentMarker");
       const instructionOverlay = document.getElementById("markerInstructions");
       const loading = document.getElementById("loading");
+
+      // Initialize videos for mobile compatibility
+      function initializeVideos() {
+        markers.forEach((markerData) => {
+          const videoEl = document.getElementById(markerData.videoId);
+          if (videoEl) {
+            videoEl.muted = true;
+            videoEl.loop = true;
+            videoEl.playsInline = true;
+            videoEl.setAttribute('webkit-playsinline', '');
+            videoEl.setAttribute('playsinline', '');
+            
+            // Preload video
+            videoEl.load();
+            
+            // Try to prime video for mobile
+            videoEl.currentTime = 0.1;
+          }
+        });
+      }
 
       // Initialize marker event listeners
       markers.forEach((markerData, index) => {
@@ -392,18 +368,29 @@
           status.innerText = "Marker terdeteksi!";
           status.classList.add("status-found");
           title.innerText = markerData.title;
-          markerInfo.style.display = "block";
-          currentMarkerSpan.innerText = markerData.title;
           loading.style.display = "none";
           
           // Stop all other videos
           stopAllVideos();
           
-          // Play current video
+          // Play current video with better mobile support
           const videoEl = document.getElementById(markerData.videoId);
           if (videoEl) {
             videoEl.currentTime = 0;
-            videoEl.play().catch(e => console.log("Video play error:", e));
+            // Multiple attempts to ensure video plays
+            const playPromise = videoEl.play();
+            
+            if (playPromise !== undefined) {
+              playPromise.then(() => {
+                console.log("Video playing successfully");
+              }).catch(error => {
+                console.log("Video play error:", error);
+                // Try again after short delay
+                setTimeout(() => {
+                  videoEl.play().catch(e => console.log("Second play attempt failed:", e));
+                }, 100);
+              });
+            }
           }
           
           // Animate
@@ -425,9 +412,7 @@
           if (activeMarkers.size === 0) {
             status.innerText = "Marker tidak terdeteksi";
             status.classList.remove("status-found");
-            title.innerText = "Cinemaps WebAR";
-            markerInfo.style.display = "none";
-            currentMarkerSpan.innerText = "-";
+            title.innerText = "Cinemaps";
           }
         });
       });
@@ -444,19 +429,25 @@
       function closeInstructions() {
         instructionOverlay.style.display = "none";
         loading.style.display = "block";
+        
+        // Initialize videos after user interaction (required for mobile)
+        initializeVideos();
       }
 
       function showInstructions() {
         instructionOverlay.style.display = "flex";
       }
 
-      // Preload videos
-      markers.forEach(markerData => {
-        const videoEl = document.getElementById(markerData.videoId);
-        if (videoEl) {
-          videoEl.load();
-        }
+      // Wait for scene to be ready
+      document.querySelector('a-scene').addEventListener('loaded', function () {
+        console.log('A-Frame scene loaded');
+        initializeVideos();
       });
+
+      // Enable video playback on user interaction (mobile requirement)
+      document.addEventListener('touchstart', function() {
+        initializeVideos();
+      }, { once: true });
 
       // Prevent context menu
       document.addEventListener("contextmenu", e => e.preventDefault());
