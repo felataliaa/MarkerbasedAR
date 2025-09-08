@@ -225,19 +225,19 @@
         <a-entity id="videoContainer1" position="0 0 0" rotation="0 0 0">
           <a-plane 
             id="videoPlane1" 
-            position="0 0.02 0" 
+            position="0 0.02 -3" 
             rotation="-90 0 0" 
-            width="1.2" 
-            height="0.675" 
+            width="6" 
+            height="3.375" 
             material="src: #vid1; transparent: true; alphaTest: 0.1;"
             animation__scaleIn="property: scale; from: 0.1 0.1 0.1; to: 1 1 1; dur: 500; easing: easeOutBack; autoplay: false"
             animation__fadeIn="property: material.opacity; from: 0; to: 1; dur: 300; autoplay: false">
           </a-plane>
           <a-box
             position="0 -0.03 0"
-            width="1.25"
-            height="0.06"
-            depth="0.75"
+            width="6.2"
+            height="0.1"
+            depth="3.5"
             material="color: #333; metalness: 0.8; roughness: 0.2;"
             shadow="receive: true">
           </a-box>
@@ -461,3 +461,4 @@
     </script>
   </body>
 </html>
+
